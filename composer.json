@@ -1,0 +1,16 @@
+{
+    "name": "jhordans/micro-frame-php",
+    "type": "project",
+    "license": "MIT LICENCE",
+    "autoload": {
+        "psr-4": {
+            "Jhordans\\MicroFramePhp\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "JhordanS"
+        }
+    ],
+    "require": {}
+}
