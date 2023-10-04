@@ -1,13 +1,14 @@
-<?php 
-
+<?php
 
 namespace App\Core;
 
-class Router 
+class Router
 {
 
     public Request $request;
+
     protected array $routes = [];
+
 
     public function __construct(Request $request)
     {
@@ -21,14 +22,26 @@ class Router
 
     public function resolve()
     {
-       $path = $this->request->getPath();
-       $method = $this->request->getMethod();
-       $callback = $this->routes[$method][$path];
+        $path = $this->request->getPath();
+        $method = $this->request->getMethod();
+        $callback = $this->routes[$method][$path] ?? false;
 
-       if ($callback === false) {
-        dd('Not found', true);
-       }
+        if ($callback === false) {
+            echo 'Not found';
+            return;
+        }
 
-       echo call_user_func($callback);
+        if (is_string($callback)) {
+        
+            return $this->renderView($callback);
+        }
+
+        return dd(call_user_func($callback));
+    }
+
+    public function renderView($view)
+    {
+   
+        include_once "../Views/$view.php";
     }
 }

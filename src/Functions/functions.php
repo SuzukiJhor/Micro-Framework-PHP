@@ -3,8 +3,6 @@
 function dd($params = [])
 {
     echo '<pre>';
-    print_r($params);
+    var_dump($params);
     echo'</pre>';
-
-    exit();
 }
