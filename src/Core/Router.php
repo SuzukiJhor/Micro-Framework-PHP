@@ -2,6 +2,8 @@
 
 namespace App\Core;
 
+use App\Core\Request;
+
 class Router 
 {
 
@@ -13,6 +15,7 @@ class Router
     {
         $this->request = $request;
     }
+
     public function get($path, $callback)
     {
         $this->routes['get'][$path] = $callback;
@@ -20,7 +23,16 @@ class Router
 
     public function resolve()
     {
-       
+       $path = $this->request->getPath();
+       $method = $this->request->getMethod();
+       $callback = $this->routes[$method][$path];
+
+       if ($callback === false) {
+        dd('Not found', true);
+       }
+
+       echo call_user_func($callback);
+
     }
 
 }
