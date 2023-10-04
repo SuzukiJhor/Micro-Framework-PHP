@@ -1,18 +1,21 @@
-<?php 
-include '../vendor/autoload.php';
+<?php
 
 use App\Core\Application;
 
-include '../src/Core/Application.php';
+
+include '../vendor/autoload.php';
+
+// use Jhordans\MicroFramePhp\Core\Application;
+
 
 $app = new Application();
-var_dump($app);
 
+$app->router->get('/', function () {
+    return 'ola mundo';
+});
 
-// $app->router->get('/', fn() => return "ola mundo";);
+$app->router->get('/contact', function () {
+    return "Contact";
+});
 
-// $app->router->get('/contact', fn() => return "Contact";);
-
-// $app->run();
-
-// var_dump('ola');
+$app->run();

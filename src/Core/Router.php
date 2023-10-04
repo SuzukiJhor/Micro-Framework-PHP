@@ -1,15 +1,13 @@
 <?php 
 
-namespace App\Core;
 
-use App\Core\Request;
+namespace App\Core;
 
 class Router 
 {
 
     public Request $request;
     protected array $routes = [];
-
 
     public function __construct(Request $request)
     {
@@ -32,7 +30,5 @@ class Router
        }
 
        echo call_user_func($callback);
-
     }
-
 }

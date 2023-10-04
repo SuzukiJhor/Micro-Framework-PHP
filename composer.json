@@ -3,8 +3,11 @@
     "type": "project",
     "license": "MIT LICENCE",
     "autoload": {
+        "classmap": [
+
+        ],
         "psr-4": {
-            "Jhordans\\MicroFramePhp\\": "src/"
+            "App\\": "src/"
         }
     },
     "authors": [

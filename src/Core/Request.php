@@ -1,5 +1,6 @@
 <?php 
 
+
 namespace App\Core;
 
 class Request
@@ -7,6 +8,11 @@ class Request
     public function getPath()
     {
         $path = $_SERVER['REQUEST_URI'] ?? '/';
+
+        echo $path;
+
+        exit();
+        
         $position = strpos($path, '?');
 
         if ($position === false) {
