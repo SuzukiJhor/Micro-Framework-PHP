@@ -2,16 +2,12 @@
 
 include '../vendor/autoload.php';
 include '../src/Functions/functions.php';
-include '../src/Views/contact.php';
 
 use App\Core\Application;
 
-
 $app = new Application();
 
-$app->router->get('/', function () {
-    return 'ola mundo';
-});
+$app->router->get('/home', 'home');
 
 $app->router->get('/contact', 'contact');
 

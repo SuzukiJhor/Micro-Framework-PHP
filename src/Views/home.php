@@ -37,7 +37,7 @@
 </head>
 <body>
     <header>
-        <h1>Contact</h1>
+        <h1>Home</h1>
     </header>
     <div class="container">
         <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Fugit animi quis possimus dignissimos omnis, porro ratione nam quo eum, in odio ab alias at esse accusantium beatae, eaque nesciunt! At?.</p>

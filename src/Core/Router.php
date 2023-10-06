@@ -2,13 +2,12 @@
 
 namespace App\Core;
 
+include '../../vendor/autoload.php';
 class Router
 {
 
     public Request $request;
-
     protected array $routes = [];
-
 
     public function __construct(Request $request)
     {
@@ -32,7 +31,7 @@ class Router
         }
 
         if (is_string($callback)) {
-        
+
             return $this->renderView($callback);
         }
 
@@ -41,7 +40,7 @@ class Router
 
     public function renderView($view)
     {
-   
-        include_once "../Views/$view.php";
+
+        include_once "../src/Views/$view.php";
     }
 }
