@@ -2,7 +2,6 @@
 
 namespace App\Core;
 
-include '../../vendor/autoload.php';
 class Router
 {
 
@@ -40,12 +39,13 @@ class Router
 
     public function renderView($view)
     {
+
         $layoutContent = $this->layoutContent();
         $viewContent = $this->renderOnlyView($view);
 
-        return str_replace('{{content}}', $viewContent, $layoutContent);
-        
-       
+        $path =  str_replace('{{content}}', $viewContent, $layoutContent);
+
+        echo $path;
     }
 
     protected function layoutContent()
@@ -54,7 +54,9 @@ class Router
 
         include_once "../src/Views/layouts/main.php";
 
-        return ob_get_clean();
+        $output = ob_get_clean();
+
+        return $output;
     }
 
     public function renderOnlyView($view)
@@ -63,7 +65,8 @@ class Router
 
         include_once "../src/Views/$view.php";
 
-        return ob_get_clean();
+        $output = ob_get_clean();
 
+        return $output;
     }
 }
