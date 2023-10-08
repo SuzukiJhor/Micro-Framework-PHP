@@ -1,12 +1,5 @@
 <style>
-        /* CSS Styles */
-        body {
-            font-family: Arial, sans-serif;
-            background-color: #f4f4f4;
-            margin: 0;
-            padding: 0;
-        }
-
+    
         .container {
             max-width: 400px;
             margin: 0 auto;
@@ -60,18 +53,18 @@
     </div>
     <div class="container">
         <h2>Contact Us my friend</h2>
-        <form action="process_contact.php" method="POST">
+        <form action="" method="POST">
             <div class="form-group">
                 <label for="name">Name:</label>
                 <input type="text" id="name" name="name" required>
             </div>
             <div class="form-group">
                 <label for="email">Email:</label>
-                <input type="email" id="email" name="email" required>
+                <input type="text" id="email" name="email" required>
             </div>
             <div class="form-group">
                 <label for="date_of_birth">Date of Birth:</label>
-                <input type="date" id="date_of_birth" name="date_of_birth" required>
+                <input type="date" id="date_of_birth" name="date_of_birth">
             </div>
             <button type="submit" class="btn">Submit</button>
         </form>
