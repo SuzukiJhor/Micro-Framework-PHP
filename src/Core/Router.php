@@ -87,9 +87,12 @@ class Router
      */
     protected function layoutContent()
     {
+
+        $layout = Application::$app->controller->layout;
+
         ob_start();
 
-        include_once "../src/Views/layouts/main.php";
+        include_once "../src/Views/layouts/$layout.php";
 
         $output = ob_get_clean();
 
@@ -129,29 +132,21 @@ class Router
 
     public function executeController($callback)
     {
-        $controller = $callback[0];
+        $controllerClass = $callback[0];
         $methodName = $callback[1];
-       
 
-        if (class_exists($controller) && method_exists($controller, $methodName)) {
-            $controllerInstance = new $controller();
-            $method = $this->request->getMethod();
+        if (!class_exists($controllerClass) || !method_exists($controllerClass, $methodName)) {
+            echo "Classe ou método não encontrados";
+            return;
+        }
 
-            switch ($method) {
-                case 'get':
-                  
-                    $controllerInstance->$methodName();
+        Application::$app->controller = new $controllerClass();
+        $method = $this->request->getMethod();
 
-                    break;
-
-                case 'post':
-                    $controllerInstance->$methodName($this->request);
-
-                    break;
-            }
-        } else {
-
-            echo   "Classe ou método não encontrados";
+        if ($method === 'get') {
+            Application::$app->controller->$methodName();
+        } elseif ($method === 'post') {
+            Application::$app->controller->$methodName($this->request);
         }
     }
 }
