@@ -13,25 +13,22 @@ class SiteController extends Controller
     public function home()
     {
         $params = [
-            "name"=> "Jhordinha"
+            "name" => "Jhordinha"
         ];
-       
-        return $this->render('home', $params);
 
+        return $this->render('home', $params);
     }
-    
+
     public function contact()
     {
-    
-        return $this->render('contact');
 
+        return $this->render('contact');
     }
 
     public function about()
     {
-    
-        return $this->render('about');
 
+        return $this->render('about');
     }
 
     public function handleContact(Request $request)
