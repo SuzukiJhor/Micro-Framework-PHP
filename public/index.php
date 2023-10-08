@@ -2,7 +2,6 @@
 
 include '../vendor/autoload.php';
 include '../src/Functions/functions.php';
-// include '../src/Controllers/SiteController.php';
 
 use App\Controllers\SiteController;
 use App\Core\Application;
