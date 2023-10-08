@@ -10,16 +10,15 @@ class AuthController extends Controller
 {
     public function login()
     {
-       $view = $this->renderLogin('login');
+        $this->setLayout('auth');
+        $view = $this->render('login');
         echo $view;
     }
 
     public function register()
     {
-       
-        // $body = $request->getBody();
-        $view = $this->renderLogin('register');
-        // dd($body);
+        $this->setLayout('auth');
+        $view = $this->render('register');
         echo $view;
     }
 }
