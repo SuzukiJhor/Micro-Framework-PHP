@@ -2,20 +2,20 @@
 
 include '../vendor/autoload.php';
 include '../src/Functions/functions.php';
+// include '../src/Controllers/SiteController.php';
 
+use App\Controllers\SiteController;
 use App\Core\Application;
 
 $app = new Application(dirname(__DIR__));
 
-$app->router->get('/', 'home');
+$app->router->get('/', [SiteController::class, 'home']);
 
-$app->router->get('/about', 'about');
+$app->router->get('/about', [SiteController::class, 'about']);
 
-$app->router->get('/contact', 'contact');
+$app->router->get('/contact', [SiteController::class, 'contact']);
 
-$app->router->post('/contact', function() {
-    return 'alguma coisa post contato';
-});
+$app->router->post('/contact', [SiteController::class, 'handleContact']);
 
 
 $app->run();
