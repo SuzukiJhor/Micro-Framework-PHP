@@ -3,8 +3,8 @@
     "type": "project",
     "license": "MIT LICENCE",
     "autoload": {
-        "classname":[
-
+        "classmap": [
+            "src/Functions/functions.php"
         ],
         "psr-4": {
             "App\\": "src/"
@@ -15,5 +15,7 @@
             "name": "JhordanS"
         }
     ],
-    "require": {}
+    "require-dev": {
+       
+    }
 }
