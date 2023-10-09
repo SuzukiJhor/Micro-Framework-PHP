@@ -35,7 +35,7 @@
             display: block;
             width: 100%;
             padding: 10px;
-            background-color: #007bff;
+            background-color: #000000;
             color: #fff;
             text-align: center;
             border: none;
@@ -44,10 +44,9 @@
         }
 
         .btn:hover {
-            background-color: #0056b3;
+            background-color: #008000;
         }
     </style>
-<div class="container">
     <div>
         <h1>Contact</h1>
     </div>
@@ -66,7 +65,10 @@
                 <label for="date_of_birth">Date of Birth:</label>
                 <input type="date" id="date_of_birth" name="date_of_birth">
             </div>
+            <div class="form-group">
+                <label for="textArea">Text:</label>
+                <input type="text" id="textArea" name="textArea">
+            </div>
             <button type="submit" class="btn">Submit</button>
         </form>
     </div>
-</div>

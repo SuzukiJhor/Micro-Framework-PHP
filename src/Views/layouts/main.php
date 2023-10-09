@@ -7,7 +7,7 @@
     <title>Micro Frame</title>
 
     <style>
-        *,
+      *,
         body {
             margin: 0;
             padding: 0;
@@ -20,10 +20,6 @@
             text-align: center;
         }
 
-        header h1 {
-            margin: 0;
-            font-size: 36px;
-        }
 
         header nav ul {
             list-style: none;
@@ -82,9 +78,10 @@
 
 <body>
     <header>
-        <h1>Micro Frame</h1>
+       
         <nav>
             <ul>
+                
                 <li><a href="/">Home</a></li>
                 <li><a href="/about">About Us</a></li>
                 <li><a href="/contact">Contact</a></li>
@@ -95,7 +92,7 @@
         {{content}}
     </main>
     <footer>
-        <p>&copy; <?php echo date("Y"); ?> - Jhord</p>
+        <p>&copy; <?php echo date("Y"); ?> - JhordanS.</p>
     </footer>
 </body>
 

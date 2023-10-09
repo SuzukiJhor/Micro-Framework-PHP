@@ -20,10 +20,6 @@
             text-align: center;
         }
 
-        header h1 {
-            margin: 0;
-            font-size: 36px;
-        }
 
         header nav ul {
             list-style: none;
@@ -45,21 +41,61 @@
         }
 
         main {
-            position: absolute;
-            top: 0;
-            right: 0;
-            bottom: 0;
-            left: 0;
-            margin: auto;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+          
+          
+            margin: 15px auto;
             width: 50%;
             height: 50%;
         }
 
-        main h1 {
-            display: flex;
-            justify-content: center;
-            margin-bottom: 20px;
+        .registration-container,
+        .login-container {
+            background-color: #ffffff;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            padding: 20px;
+            width: 300px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+        }
 
+        .registration-container h2,
+        .login-container h2 {
+            text-align: center;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        .form-group label {
+            display: block;
+            font-weight: bold;
+        }
+
+        .form-group input[type="text"],
+        .form-group input[type="password"] {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-size: 16px;
+        }
+
+        .form-group button {
+            background-color: #000000;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            padding: 10px 20px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        .form-group button:hover {
+            background-color: #008000;
         }
 
         footer {
@@ -81,12 +117,19 @@
 </head>
 
 <body>
-   
+    <header>
+        <nav>
+            <ul>
+                <li><a href="/login">Login</a></li>
+                <li><a href="/register">Register</a></li>
+            </ul>
+        </nav>
+    </header>
     <main>
         {{content}}
     </main>
     <footer>
-        <p>&copy; <?php echo date("Y"); ?> - Jhord</p>
+        <p>&copy; <?php echo date("Y"); ?> - JhordanS.</p>
     </footer>
 </body>
 
